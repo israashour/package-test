@@ -1,0 +1,19 @@
+{
+    "name": "esraaashour/slug",
+    "description": "a slug generator package",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Esraaashour\\Slug\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ashourisra",
+            "email": "85707708+israashour@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
