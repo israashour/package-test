@@ -24,13 +24,14 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Package\\Slug\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Tests\\": "tests/",
-            "Esraaashour\\Slug\\": "src/"
+            "es\\lightloglite\\": "package/es_lightloglite/src/"
         }
     },
     "scripts": {

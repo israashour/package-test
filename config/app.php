@@ -168,7 +168,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Esraaashour\Slug\SlugServiceProvider::class,
+
+        es\lightloglite\LightLogLiteServiceProvider::class,
     ])->toArray(),
 
     /*
