@@ -13,3 +13,7 @@ Route::get('/logs', [LogController::class, 'showLogs'])->name('logs');
 
 // مسار عرض الإحصائيات
 Route::get('/log-counts', [LogController::class, 'showCounts'])->name('log-counts');
+
+//مسار عرض ال charts
+Route::get('/', [LogController::class, 'chartsLogs'])->name('charts');
+

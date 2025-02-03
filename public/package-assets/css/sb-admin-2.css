@@ -10850,7 +10850,7 @@ a:focus {
 
 .chart-pie {
   position: relative;
-  height: 15rem;
+  height: auto;
   width: 100%;
 }
 

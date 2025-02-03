@@ -19,16 +19,18 @@
                         <form method="GET" action="{{ route('logs') }}">
                             <div>
                                 <label for="start_date">Start Date:</label>
-                                <input type="date" name="start_date" value="{{ request('start_date') }}">
+                                <input type="date" name="start_date" id="start_date" value="{{ request('start_date') }}">
                             </div>
                             <div>
                                 <label for="end_date">End Date:</label>
-                                <input type="date" name="end_date" value="{{ request('end_date') }}">
+                                <input type="date" name="end_date" id="end_date" value="{{ request('end_date') }}">
                             </div>
                             <div>
                                 <button type="submit" class="btn btn-info">Filter</button>
+                                <button type="button" class="btn btn-secondary" onclick="resetFilters()">Reset</button>
                             </div>
                         </form>
+
                     </div>
 
                     <div class="table-responsive">
@@ -64,4 +66,15 @@
 
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script>
+        function resetFilters() {
+            document.getElementById('start_date').value = '';
+            document.getElementById('end_date').value = '';
+            window.location.href = "{{ route('logs') }}"; // Redirect to logs page without filters
+        }
+    </script>
+
 @endsection

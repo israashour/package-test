@@ -13,9 +13,46 @@ class LogController extends Controller
     public function showLogs(Request $request)
     {
         $logs = $this->processLogs($request, 'logs');
+
+
         return view('Logs.logs', compact('logs'));
     }
 
+    public function chartsLogs(Request $request)
+    {
+        $logs = $this->processLogs($request, 'logs');
+
+        // Count logs by type for pie chart
+        $totalLogs = count($logs);
+        $logCountsByType = [];
+        foreach ($logs as $log) {
+            $type = $log['type'];
+            if (isset($logCountsByType[$type])) {
+                $logCountsByType[$type]++;
+            } else {
+                $logCountsByType[$type] = 1;
+            }
+        }
+
+        // Calculate percentages
+        $logPercentages = [];
+        foreach ($logCountsByType as $type => $count) {
+            $logPercentages[$type] = round(($count / $totalLogs) * 100, 2);
+        }
+
+        // Group logs by date for line chart
+        $logCountsByDate = [];
+        foreach ($logs as $log) {
+            $date = Carbon::parse($log['datetime'])->format('Y-m-d');
+            if (isset($logCountsByDate[$date])) {
+                $logCountsByDate[$date]++;
+            } else {
+                $logCountsByDate[$date] = 1;
+            }
+        }
+
+        return view('Logs.main', compact('logCountsByType', 'logPercentages', 'logCountsByDate'));
+    }
     /**
      * عرض الإحصائيات (Counts) مرتبة من الأكبر إلى الأصغر
      */
