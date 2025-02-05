@@ -81,10 +81,12 @@
                 type: 'pie',
                 data: {
                     labels: logTypes.map((label, index) =>
-                    `${label} (${logPercentages[index]}%)`), // Append percentage to label
+                        `${label} (${logPercentages[index]}%)`), // Append percentage to label
                     datasets: [{
                         data: logCounts,
-                        backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', '#e74a3b']
+                        backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#f6c23e', '#e74a3b',
+                            '#8e44ad', '#c0392b', '#16a085'
+                        ],
                     }]
                 },
                 options: {
